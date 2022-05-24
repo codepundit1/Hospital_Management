@@ -98,7 +98,7 @@ class HomeController extends Controller
     {
         $data = Appointment::find($id);
         $data -> delete();
-        return redirect()->back()->with('status', 'User Deleted Successfully');
+        return redirect()->back()->with('message', 'User Deleted Successfully');
     }
 
 

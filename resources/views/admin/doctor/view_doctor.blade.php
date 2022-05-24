@@ -14,57 +14,74 @@
 
         @include('admin.navbar')
 
-        <div class="container-fluid page-body-wrapper">
-
-            <div class="col-md-6 grid-margin stretch-card">
+        <div class="container-fluid mt-5 ">
+            <div class="row mt-5">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="#">Home</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Doctor</li>
+                    </ol>
+                </nav>
                 <div class="card">
-                    <div class="card-body">
-                        <h4 class="card-title">Doctor List</h4>
-                        <form class="forms-sample" action="" method="" enctype="multipart/form-data">
-                            <div class="form-group">
-                                <label for="name">Name</label>
-                                <input type="text" name="name" class="form-control" id="name" placeholder="Name">
-                            </div>
-                            <div class="form-group">
-                                <label for="email">Email address</label>
-                                <input type="email" name="email" class="form-control" id="email" placeholder="Email">
-                            </div>
-                            <div class="form-group">
-                                <label for="exampleInputPassword4">Password</label>
-                                <input type="password" class="form-control" id="exampleInputPassword4"
-                                    placeholder="Password">
-                            </div>
-                            <div class="form-group">
-                                <label for="exampleSelectGender">Gender</label>
-                                <select class="form-control" id="exampleSelectGender">
-                                    <option>Male</option>
-                                    <option>Female</option>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <label>File upload</label>
-                                <input type="file" name="img[]" class="file-upload-default">
-                                <div class="input-group col-xs-12">
-                                    <input type="text" class="form-control file-upload-info" disabled
-                                        placeholder="Upload Image">
-                                    <span class="input-group-append">
-                                        <button class="file-upload-browse btn btn-primary" type="button">Upload</button>
-                                    </span>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="exampleInputCity1">City</label>
-                                <input type="text" class="form-control" id="exampleInputCity1" placeholder="Location">
-                            </div>
-                            <div class="form-group">
-                                <label for="exampleTextarea1">Textarea</label>
-                                <textarea class="form-control" id="exampleTextarea1" rows="4"></textarea>
-                            </div>
-                            <button type="submit" class="btn btn-primary me-2">Submit</button>
-                            <button class="btn btn-dark">Cancel</button>
-                        </form>
+                    <div class="card-header">
+                        <h3>
+                            Doctor List
+
+                            <span><a class="btn btn-primary btn-sm float-end" href="{{ url('add_doctor') }}">Add Doctor</a> </span>
+
+
+
+                        </h3>
                     </div>
                 </div>
+                <div class="table-responsive">
+                    <table class="table ">
+                        <thead>
+                            <tr>
+                                <th scope="col">SI.</th>
+                                <th scope="col">Name</th>
+                                <th scope="col">Email</th>
+                                <th scope="col">Phone</th>
+                                <th scope="col">Speciality</th>
+                                <th scope="col">Room</th>
+                                <th scope="col">Image</th>
+                                <th scope="col">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach ($doctors as $key => $doctor)
+                                <tr>
+                                    <td scope="row">{{ $key + 1 }}</td>
+                                    <td>{{ $doctor->name }}</td>
+                                    <td>{{ $doctor->email }}</td>
+                                    <td>{{ $doctor->phone }}</td>
+                                    <td>{{ $doctor->speciality }}</td>
+                                    <td>{{ $doctor->room }}</td>
+                                    <td>
+                                        <img src="{{ asset('uploads/doctors/'. $doctor->image) }}" width="80px" height="80px" alt="">
+                                    </td>
+
+                                    <td >
+                                        <a title="edit" id="edit" class="btn btn-primary"
+                                            href="{{ 'edit_doctor/'}}"><i class="fa fa-edit "></i>
+                                        </a>
+
+                                        <a title="delete" id="delete" class="btn btn-danger"
+                                            href="{{ 'delete_doctor/' . $doctor->id }}"><i class="fa fa-trash"></i>
+                                        </a>
+                                    </td>
+                                </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
+                    <div class="d-felx justify-content-center">
+
+                        {{ $doctors->links() }}
+
+                    </div>
+                </div>
+
+
             </div>
         </div>
 
@@ -75,3 +92,4 @@
 </body>
 
 </html>
+
