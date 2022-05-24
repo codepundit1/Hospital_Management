@@ -63,11 +63,13 @@
 
                                     <td >
                                         <a title="edit" id="edit" class="btn btn-primary"
-                                            href="{{ 'edit_doctor/'}}"><i class="fa fa-edit "></i>
+                                            href="{{ url('edit-doctor', $doctor->id) }}" ><i class="fa fa-edit "></i>
                                         </a>
 
+
+
                                         <a title="delete" id="delete" class="btn btn-danger"
-                                            href="{{ 'delete_doctor/' . $doctor->id }}"><i class="fa fa-trash"></i>
+                                            href="{{ 'delete_doctor/' . $doctor->id }}" onclick="return confirm('Are You Want Sure to Delete ?')"><i class="fa fa-trash"></i>
                                         </a>
                                     </td>
                                 </tr>

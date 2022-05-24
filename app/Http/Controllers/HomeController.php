@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
 use App\Models\Appointment;
+use Illuminate\Support\Facades\File;
 
 class HomeController extends Controller
 {

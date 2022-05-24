@@ -26,7 +26,8 @@ Route::get('view_doctor/', [AdminController::class,'viewDoctor']);
 Route::get('add_doctor/', [AdminController::class,'add']);
 Route::post('store_doctor/', [AdminController::class,'store'])->name('addDoctor');
 Route::get('delete_doctor/{id}', [AdminController::class, 'deleteDoctor']);
-Route::get('edit_doctor/', [AdminController::class, 'editDoctor']);
+Route::get('edit-doctor/{id}', [AdminController::class, 'editDoctor'])->name('edit-doctor');
+Route::post('editdoctor', [AdminController::class,'updateDoctor']);
 
 
 

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Appointment;
 use Illuminate\Http\Request;
 use App\Models\Doctor;
+use Illuminate\Support\Facades\File;
 
 class AdminController extends Controller
 {
@@ -57,11 +58,43 @@ class AdminController extends Controller
     }
 
 
-    public function editDoctor()
+    public function editDoctor($id)
     {
-        return view('admin.doctor.update_doctor');
+        $doctor= Doctor::find($id);
+        return view('admin.doctor.update_doctor', ['doctors'=>$doctor]);
     }
 
+
+
+    public function updateDoctor(Request $request)
+    {
+        $doctor= Doctor::find($request->id);
+        $doctor->name = $request->name;
+        $doctor->email = $request->email;
+        $doctor->phone = $request->phone;
+        $doctor->speciality = $request->speciality;
+        $doctor->room = $request->room;
+
+
+        if($request->hasFile('image')){
+
+            $destination = 'uploads/resorts' . $doctor->image;
+            if(File::exists($destination)){
+                File::delete($destination);
+            }
+
+            $file = $request->file('image');
+            $extension = $file->getClientOriginalExtension();
+            $filename = time().'.'.$extension;
+            $file->move('uploads/doctors', $filename);
+            $doctor->image = $filename;
+        }
+        $doctor->save();
+
+
+
+        return redirect('view_doctor');
+    }
 
 
 
