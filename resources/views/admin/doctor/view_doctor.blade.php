@@ -15,7 +15,9 @@
         @include('admin.navbar')
 
         <div class="container-fluid mt-5 ">
+
             <div class="row mt-5">
+
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="#">Home</a></li>

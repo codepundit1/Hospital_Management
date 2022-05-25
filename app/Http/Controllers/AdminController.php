@@ -93,7 +93,7 @@ class AdminController extends Controller
 
 
 
-        return redirect('view_doctor');
+        return redirect('view_doctor')->with('message', 'Successfully Updated');
     }
 
 
