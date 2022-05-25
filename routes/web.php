@@ -49,3 +49,7 @@ Route::get('myappointments/', [HomeController::class, 'myappointment'])->name('m
 Route::get('cancel_appoint/{id}', [HomeController::class, 'deleteAppointment']);
 
 
+//mail user
+Route::get('email_view/{id}', [AdminController::class, 'viewEmail'])->name('email_view');
+Route::post('sendmail/{id}', [AdminController::class,'sendMail'])->name('send_mail');
+

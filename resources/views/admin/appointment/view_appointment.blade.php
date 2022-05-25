@@ -47,7 +47,7 @@
                                 <th scope="col">Date</th>
                                 <th scope="col">Message</th>
                                 <th scope="col">Status</th>
-                                <th scope="col">Action</th>
+                                <th scope="col" class="text-center">Action</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -62,12 +62,16 @@
                                     <td>{{ $appointment->message }}</td>
                                     <td>{{ $appointment->status }}</td>
                                     <td>
-                                        <a title="approve" id="approve" class="btn btn-primary"
+                                        <a title="approve" id="approve" class="btn btn-success"
                                             href="{{ 'approve/' . $appointment->id }}"><i class="fa fa-check "></i>
                                         </a>
 
                                         <a title="delete" id="delete" class="btn btn-danger"
                                             href="{{ 'cancel/' . $appointment->id }}"><i class="fa fa-trash"></i>
+                                        </a>
+
+                                         <a title="send_mail" id="send_mail" class="btn btn-primary"
+                                            href="{{ url('email_view', $appointment->id) }}" ><i class="fa fa-envelope "></i>
                                         </a>
                                     </td>
                                 </tr>
