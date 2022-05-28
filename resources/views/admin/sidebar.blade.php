@@ -12,8 +12,8 @@
               <span class="count bg-success"></span>
             </div>
             <div class="profile-name">
-              <h5 class="mb-0 font-weight-normal">Henry Klein</h5>
-              <span>Gold Member</span>
+              <h5 class="mb-0 font-weight-normal">{{ Auth::user()->name }}</h5>
+
             </div>
           </div>
           <a href="#" id="profile-dropdown" data-bs-toggle="dropdown"><i class="mdi mdi-dots-vertical"></i></a>
@@ -40,21 +40,21 @@
               </div>
             </a>
             <div class="dropdown-divider"></div>
-            <a href="#" class="dropdown-item preview-item">
-              <div class="preview-thumbnail">
-                <div class="preview-icon bg-dark rounded-circle">
-                  <i class="mdi mdi-calendar-today text-success"></i>
-                </div>
-              </div>
-              <div class="preview-item-content">
-                <p class="preview-subject ellipsis mb-1 text-small">To-do list</p>
-              </div>
-            </a>
+
           </div>
         </div>
       </li>
       <li class="nav-item nav-category">
         <span class="nav-link">Navigation</span>
+      </li>
+
+     <li class="nav-item menu-items">
+        <a class="nav-link" href="{{url('home')}}">
+          <span class="menu-icon">
+            <i class="mdi mdi-file-document-box"></i>
+          </span>
+          <span class="menu-title">Dashboard</span>
+        </a>
       </li>
 
       <li class="nav-item menu-items">

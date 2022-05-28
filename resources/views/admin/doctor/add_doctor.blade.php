@@ -3,6 +3,17 @@
 
 <head>
     @include('admin.css')
+   <style>
+
+
+   input{
+       color:black!important;
+   }
+input:focus {
+  background-color: #FFFFFF!important;
+  color:gray!important;
+}
+</style>
 
 </head>
 
