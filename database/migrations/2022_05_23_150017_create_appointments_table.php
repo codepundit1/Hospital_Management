@@ -16,12 +16,12 @@ return new class extends Migration
         Schema::create('appointments', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('user_id')->nullable();
-            $table->string('fullname')->nullable();
-            $table->string('email')->nullable();
-            $table->string('date')->nullable();
-            $table->string('selectdoctor')->nullable();
-            $table->string('phone')->nullable();
-            $table->string('message')->nullable();
+            $table->string('fullname', 50);
+            $table->string('email')->uniqid();
+            $table->string('date');
+            $table->string('selectdoctor');
+            $table->string('phone');
+            $table->string('message');
             $table->string('status')->nullable();
             $table->timestamps();
         });

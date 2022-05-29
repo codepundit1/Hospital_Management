@@ -36,6 +36,7 @@ Route::post('editdoctor', [AdminController::class,'updateDoctor']);
 Route::get('view_appointment/', [AdminController::class,'viewAppointment']);
 Route::get('approve/{id}', [AdminController::class, 'approved']);
 Route::get('cancel/{id}', [AdminController::class, 'canceled']);
+Route::get('delete/{id}', [AdminController::class, 'deleteAppointment']);
 
 
 

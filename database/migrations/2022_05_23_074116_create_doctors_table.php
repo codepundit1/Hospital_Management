@@ -15,12 +15,12 @@ return new class extends Migration
     {
         Schema::create('doctors', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('name')->nullable();
-            $table->string('email')->nullable();
-            $table->string('phone')->nullable();
-            $table->string('speciality')->nullable();
-            $table->string('room')->nullable();
-            $table->string('image')->nullable();
+            $table->string('name');
+            $table->string('email')->unique();
+            $table->string('phone');
+            $table->string('speciality');
+            $table->string('room');
+            $table->string('image');
             $table->timestamps();
         });
     }

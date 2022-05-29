@@ -3,17 +3,7 @@
 
 <head>
     @include('admin.css')
-   <style>
 
-
-   input{
-       color:black!important;
-   }
-input:focus {
-  background-color: #FFFFFF!important;
-  color:gray!important;
-}
-</style>
 
 </head>
 
@@ -28,6 +18,9 @@ input:focus {
 
 
         <div class="container-fluid mt-5 ">
+            <div class="flash mt-4">
+                @include('flash::message')
+               </div>
             <div class="row mt-5">
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
@@ -45,26 +38,36 @@ input:focus {
                         </h3>
                     </div>
                 </div>
-                <div class="addDoctorForm col-md-8" style="margin:0 auto;" >
+                <div class="addDoctorForm col-md-8" style="margin:0 auto; padding:20px;" >
                     <h1 class="text-center">Add Doctor Form</h1>
-                    <form action="{{ route('addDoctor') }}" method="POST" enctype="multipart/form-data">
+                    <form  action="{{ route('addDoctor') }}" method="POST" enctype="multipart/form-data">
 
                         @csrf
 
                         <div class="form-group">
                             <label for="name">Name</label>
-                            <input type="text" name="name" class="form-control" id="name" placeholder="Name">
+                            <input type="text" name="name" class="form-control" id="name" placeholder="Name" autocomplete="">
+                            @if ($errors->has('name'))
+                            <span class="text-danger">{{ $errors->first('name') }}</span>
+                             @endif
                         </div>
 
                         <div class="form-group">
                             <label for="email">Email address</label>
                             <input type="email" name="email" class="form-control" id="email" placeholder="Email">
+                            @if ($errors->has('email'))
+                            <span class="text-danger">{{ $errors->first('email') }}</span>
+                             @endif
                         </div>
                         <div class="form-group">
                             <label for="number">Phone</label>
                             <input type="number" name="phone" class="form-control" id="phone"
                                 placeholder="Phone">
-                        </div>
+
+                            @if ($errors->has('phone'))
+                            <span class="text-danger">{{ $errors->first('phone') }}</span>
+                             @endif
+                            </div>
                         <div class="form-group">
                             <label for="speciality">Speciality</label>
                             <select name="speciality" class="form-control bg-white" id="speciality" >
@@ -78,17 +81,20 @@ input:focus {
 
                         <div class="form-group">
                             <label for="room">Room</label>
-                            <input type="text" name="room" class="form-control" id="room"
+                            <input type="text" name="room" class="form-control" id="room" required
                                 placeholder="Room">
                         </div>
 
                         <div class="form-group">
 
-                            <input type="file" name="image" class="form-control-file " id="image" class="file-upload-default">
+                            <input type="file" name="image" class="form-control-file " id="image" class="file-upload-default" required>
+
                         </div>
 
+
+
                         <button type="submit" class="btn btn-primary me-2">Submit</button>
-                        <button class="btn btn-dark">Cancel</button>
+
                     </form>
 
                 </div>

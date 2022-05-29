@@ -16,16 +16,9 @@
         @include('admin.navbar')
 
         <div class="container-fluid mt-5 ">
-            @if (session()->has('message'))
-
-
-                <div class="alert alert-warning alert-dismissible fade show" role="alert">
-                    <strong>     {{ session()->get('message') }}!</strong> You should check in on some of those fields below.
-                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                      <span aria-hidden="true">&times;</span>
-                    </button>
-                  </div>
-            @endif
+            <div class="flash mt-4">
+                @include('flash::message')
+               </div>
             <div class="row mt-5">
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">

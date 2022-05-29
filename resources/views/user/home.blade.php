@@ -62,7 +62,7 @@
 
         <nav class="navbar navbar-expand-lg navbar-light shadow-sm">
             <div class="container">
-                <a class="navbar-brand" href="#"><span class="text-primary">One</span>-Health</a>
+                <a class="navbar-brand" href="#"><span class="text-primary">Medi</span>-cine</a>
 
                 <form action="#">
                     <div class="input-group input-navbar">
@@ -85,17 +85,13 @@
                             <a class="nav-link" href="{{ url('/') }}">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="about.html">About Us</a>
+                            <a class="nav-link" href="">About Us</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="doctors.html">Doctors</a>
+                            <a class="nav-link" href="">Doctors</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="blog.html">News</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="contact.html">Contact</a>
-                        </li>
+
+
 
                         @if (Route::has('login'))
                             @auth
@@ -135,62 +131,9 @@
     </div>
 
 
-    <div class="bg-light">
-        <div class="page-section py-3 mt-md-n5 custom-index">
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-md-4 py-3 py-md-0">
-                        <div class="card-service wow fadeInUp">
-                            <div class="circle-shape bg-secondary text-white">
-                                <span class="mai-chatbubbles-outline"></span>
-                            </div>
-                            <p><span>Chat</span> with a doctors</p>
-                        </div>
-                    </div>
-                    <div class="col-md-4 py-3 py-md-0">
-                        <div class="card-service wow fadeInUp">
-                            <div class="circle-shape bg-primary text-white">
-                                <span class="mai-shield-checkmark"></span>
-                            </div>
-                            <p><span>One</span>-Health Protection</p>
-                        </div>
-                    </div>
-                    <div class="col-md-4 py-3 py-md-0">
-                        <div class="card-service wow fadeInUp">
-                            <div class="circle-shape bg-accent text-white">
-                                <span class="mai-basket"></span>
-                            </div>
-                            <p><span>One</span>-Health Pharmacy</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div> <!-- .page-section -->
-
-        <div class="page-section pb-0">
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-lg-6 py-3 wow fadeInUp">
-                        <h1>Welcome to Your Health <br> Center</h1>
-                        <p class="text-grey mb-4">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-                            nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At
-                            vero eos et accusam et justo duo dolores et ea rebum. Accusantium aperiam earum ipsa eius,
-                            inventore nemo labore eaque porro consequatur ex aspernatur. Explicabo, excepturi
-                            accusantium! Placeat voluptates esse ut optio facilis!</p>
-                        <a href="about.html" class="btn btn-primary">Learn More</a>
-                    </div>
-                    <div class="col-lg-6 wow fadeInRight" data-wow-delay="400ms">
-                        <div class="img-place custom-img-1">
-                            <img src="../assets/img/bg-doctor.png" alt="">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div> <!-- .bg-light -->
-    </div> <!-- .bg-light -->
 
     @include('user.doctors')
-    @include('user.latestnews')
+
     @include('user.make_appointment')
 
 
@@ -212,23 +155,23 @@
                     <ul class="footer-menu">
                         <li><a href="#">Terms & Condition</a></li>
                         <li><a href="#">Privacy</a></li>
-                        <li><a href="#">Advertise</a></li>
-                        <li><a href="#">Join as Doctors</a></li>
+                        <li><a href="#">#</a></li>
+                        <li><a href="#">#</a></li>
                     </ul>
                 </div>
                 <div class="col-sm-6 col-lg-3 py-3">
                     <h5>Our partner</h5>
                     <ul class="footer-menu">
-                        <li><a href="#">One-Fitness</a></li>
-                        <li><a href="#">One-Drugs</a></li>
-                        <li><a href="#">One-Live</a></li>
+                        <li><a href="#">#</a></li>
+                        <li><a href="#">#</a></li>
+                        <li><a href="#">#</a></li>
                     </ul>
                 </div>
                 <div class="col-sm-6 col-lg-3 py-3">
                     <h5>Contact</h5>
-                    <p class="footer-link mt-2">351 Willow Street Franklin, MA 02038</p>
+                    <p class="footer-link mt-2">Dhaka Banani</p>
                     <a href="#" class="footer-link">701-573-7582</a>
-                    <a href="#" class="footer-link">healthcare@temporary.net</a>
+                    <a href="#" class="footer-link">test@example.com</a>
 
                     <h5 class="mt-3">Social Media</h5>
                     <div class="footer-sosmed mt-3">
@@ -243,7 +186,7 @@
 
             <hr>
 
-            <p id="copyright">Copyright &copy; 2020 <a href="https://macodeid.com/" target="_blank">MACode ID</a>. All
+            <p id="copyright">Copyright &copy; 2022 <a href="" target="_blank">Jahid Hasan</a>. All
                 right reserved</p>
         </div>
     </footer>

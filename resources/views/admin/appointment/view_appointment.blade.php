@@ -3,6 +3,7 @@
 
 <head>
     @include('admin.css')
+
 </head>
 
 <body>
@@ -27,10 +28,6 @@
                     <div class="card-header">
                         <h3>
                             Appointment List
-
-                            <span><a class="btn btn-primary btn-sm float-end" href="">Add Doctor</a> </span>
-
-
 
                         </h3>
                     </div>
@@ -66,12 +63,17 @@
                                             href="{{ 'approve/' . $appointment->id }}"><i class="fa fa-check "></i>
                                         </a>
 
-                                        <a title="delete" id="delete" class="btn btn-danger"
-                                            href="{{ 'cancel/' . $appointment->id }}"><i class="fa fa-trash"></i>
+                                        <a title="cancel" id="delete" class="btn btn-danger"
+                                            href="{{ 'cancel/' . $appointment->id }}"><i class="fa fa-times"></i>
                                         </a>
 
-                                         <a title="send_mail" id="send_mail" class="btn btn-primary"
-                                            href="{{ url('email_view', $appointment->id) }}" ><i class="fa fa-envelope "></i>
+                                        <a title="send_mail" id="send_mail" class="btn btn-primary"
+                                            href="{{ url('email_view', $appointment->id) }}"><i
+                                                class="fa fa-envelope "></i>
+                                        </a>
+
+                                        <a title="delete" id="delete" class="btn btn-danger sa-delete"
+                                            href="{{ 'delete/' . $appointment->id }}" onclick="return confirm('Are You Want Sure to Delete ?')"><i class="fa fa-trash"></i>
                                         </a>
                                     </td>
                                 </tr>
@@ -93,6 +95,9 @@
         <!-- container-scroller -->
         @include('admin.script')
         <!-- End custom js for this page -->
+
+
+
 </body>
 
 </html>

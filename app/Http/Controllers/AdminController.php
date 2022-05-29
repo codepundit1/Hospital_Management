@@ -13,6 +13,9 @@ use App\Models\User;
 class AdminController extends Controller
 {
 
+
+    //Doctor
+
     public function viewDoctor()
     {
         $doctor = Doctor::paginate(5);
@@ -26,9 +29,17 @@ class AdminController extends Controller
 
     public function store(Request $request)
     {
+
+
+        $this->validate($request, [
+            'name' => 'required|min:2|max:50|unique:doctors',
+            'email' => 'required|unique:doctors',
+            'phone' => 'required|max:15|unique:doctors',
+
+        ]);
+
+
         $doctor = new Doctor();
-
-
         $doctor->name = $request->name;
         $doctor->email = $request->email;
         $doctor->phone = $request->phone;
@@ -44,6 +55,7 @@ class AdminController extends Controller
             $doctor->image = $filename;
         }
 
+        flash('Added Successfully')->success();
         $doctor->save();
 
 
@@ -57,8 +69,10 @@ class AdminController extends Controller
 
         $doctor->delete();
 
+        flash('Deleted Successfully')->success();
         return redirect()->back();
     }
+
 
 
     public function editDoctor($id)
@@ -94,10 +108,22 @@ class AdminController extends Controller
         }
         $doctor->save();
 
+        flash('Updated Successfully')->success();
 
 
         return redirect('view_doctor')->with('message', 'Successfully Updated');
     }
+
+
+
+
+
+
+
+
+
+
+
 
 
     //email
@@ -127,6 +153,11 @@ class AdminController extends Controller
 
 
 
+
+
+
+
+
     //appointment
     public function viewAppointment()
     {
@@ -150,5 +181,15 @@ class AdminController extends Controller
         $appointment->status = 'Canceled';
         $appointment->save();
         return redirect()->back()->with('message', 'Successfully Canceled');
+    }
+
+    public function deleteAppointment($id)
+    {
+        $appointment = Appointment::find($id);
+
+        $appointment->delete();
+
+        flash('Deleted Successfully')->success();
+        return redirect()->back();
     }
 }

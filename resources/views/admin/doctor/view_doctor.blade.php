@@ -14,8 +14,11 @@
 
         @include('admin.navbar')
 
-        <div class="container-fluid mt-5 ">
 
+        <div class="container-fluid mt-5 ">
+           <div class="flash mt-4">
+            @include('flash::message')
+           </div>
             <div class="row mt-5">
 
                 <nav aria-label="breadcrumb">
@@ -70,7 +73,7 @@
 
 
 
-                                        <a title="delete" id="delete" class="btn btn-danger"
+                                        <a title="delete" id="delete" class="btn sa-delete btn-danger"
                                             href="{{ 'delete_doctor/' . $doctor->id }}" onclick="return confirm('Are You Want Sure to Delete ?')"><i class="fa fa-trash"></i>
                                         </a>
                                     </td>
@@ -92,6 +95,9 @@
 
         <!-- container-scroller -->
         @include('admin.script')
+        <script>
+            $('div.alert').not('.alert-important').delay(3000).fadeOut(350);
+            </script>
         <!-- End custom js for this page -->
 </body>
 
