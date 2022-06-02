@@ -63,7 +63,7 @@
 
         <nav class="navbar navbar-expand-lg navbar-light shadow-sm">
             <div class="container">
-                <a class="navbar-brand" href="#"><span class="text-primary">One</span>-Health</a>
+                <a class="navbar-brand" href="#"><span class="text-primary">Dr.</span>Appointment</a>
 
                 <form action="#">
                     <div class="input-group input-navbar">

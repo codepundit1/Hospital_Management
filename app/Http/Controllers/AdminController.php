@@ -18,7 +18,7 @@ class AdminController extends Controller
 
     public function viewDoctor()
     {
-        $doctor = Doctor::paginate(5);
+        $doctor = Doctor::orderby('created_at', 'DESC')->paginate(4);
         return view('admin.doctor.view_doctor', ['doctors'=>$doctor]);
     }
 

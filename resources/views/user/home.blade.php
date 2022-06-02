@@ -9,7 +9,7 @@
 
     <meta name="copyright" content="MACode ID, https://macodeid.com/">
 
-    <title>One Health - Medical Center</title>
+    <title>Dr.Appointment</title>
 
     <link rel="stylesheet" href="../assets/css/maicons.css">
 
@@ -34,16 +34,15 @@
                 <div class="row">
                     <div class="col-sm-8 text-sm">
                         <div class="site-info">
-                            <a href="#"><span class="mai-call text-primary"></span> +00 123 4455 6666</a>
+                            <a href="#"><span class="mai-call text-primary"></span> +880 16* *** ***</a>
                             <span class="divider">|</span>
-                            <a href="#"><span class="mai-mail text-primary"></span> mail@example.com</a>
+                            <a href="#"><span class="mai-mail text-primary"></span> info@example.com</a>
                         </div>
                     </div>
                     <div class="col-sm-4 text-right text-sm">
                         <div class="social-mini-button">
                             <a href="#"><span class="mai-logo-facebook-f"></span></a>
                             <a href="#"><span class="mai-logo-twitter"></span></a>
-                            <a href="#"><span class="mai-logo-dribbble"></span></a>
                             <a href="#"><span class="mai-logo-instagram"></span></a>
                         </div>
                     </div>
@@ -55,14 +54,14 @@
             <div class="alert alert-success alert-dismissible fade show" role="alert">
                 <strong> {{ session('message') }}</strong>
                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
+                    <span aria-hidden="true">&times;</span>
                 </button>
-              </div>
+            </div>
         @endif
 
         <nav class="navbar navbar-expand-lg navbar-light shadow-sm">
             <div class="container">
-                <a class="navbar-brand" href="#"><span class="text-primary">Medi</span>-cine</a>
+                <a class="navbar-brand" href="#"><span class="text-primary">Dr.</span>Appointment</a>
 
                 <form action="#">
                     <div class="input-group input-navbar">
@@ -84,20 +83,11 @@
                         <li class="nav-item active">
                             <a class="nav-link" href="{{ url('/') }}">Home</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="">About Us</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="">Doctors</a>
-                        </li>
-
-
-
                         @if (Route::has('login'))
                             @auth
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('myappointments') }}">My Appointment</a>
-                            </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('myappointments') }}">My Appointment</a>
+                                </li>
                                 <x-app-layout>
                                 </x-app-layout>
                             @else
@@ -111,24 +101,12 @@
 
                             @endauth
                         @endif
-
-
-
                     </ul>
                 </div> <!-- .navbar-collapse -->
             </div> <!-- .container -->
         </nav>
     </header>
 
-    <div class="page-hero bg-image overlay-dark" style="background-image: url(../assets/img/bg_image_1.jpg);">
-        <div class="hero-section">
-            <div class="container text-center wow zoomIn">
-                <span class="subhead">Let's make your life happier</span>
-                <h1 class="display-4">Healthy Living</h1>
-                <a href="#" class="btn btn-primary">Let's Consult</a>
-            </div>
-        </div>
-    </div>
 
 
 
@@ -138,56 +116,9 @@
 
 
 
-    <footer class="page-footer">
-        <div class="container">
-            <div class="row px-md-3">
-                <div class="col-sm-6 col-lg-3 py-3">
-                    <h5>Company</h5>
-                    <ul class="footer-menu">
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="#">Career</a></li>
-                        <li><a href="#">Editorial Team</a></li>
-                        <li><a href="#">Protection</a></li>
-                    </ul>
-                </div>
-                <div class="col-sm-6 col-lg-3 py-3">
-                    <h5>More</h5>
-                    <ul class="footer-menu">
-                        <li><a href="#">Terms & Condition</a></li>
-                        <li><a href="#">Privacy</a></li>
-                        <li><a href="#">#</a></li>
-                        <li><a href="#">#</a></li>
-                    </ul>
-                </div>
-                <div class="col-sm-6 col-lg-3 py-3">
-                    <h5>Our partner</h5>
-                    <ul class="footer-menu">
-                        <li><a href="#">#</a></li>
-                        <li><a href="#">#</a></li>
-                        <li><a href="#">#</a></li>
-                    </ul>
-                </div>
-                <div class="col-sm-6 col-lg-3 py-3">
-                    <h5>Contact</h5>
-                    <p class="footer-link mt-2">Dhaka Banani</p>
-                    <a href="#" class="footer-link">701-573-7582</a>
-                    <a href="#" class="footer-link">test@example.com</a>
-
-                    <h5 class="mt-3">Social Media</h5>
-                    <div class="footer-sosmed mt-3">
-                        <a href="#" target="_blank"><span class="mai-logo-facebook-f"></span></a>
-                        <a href="#" target="_blank"><span class="mai-logo-twitter"></span></a>
-                        <a href="#" target="_blank"><span class="mai-logo-google-plus-g"></span></a>
-                        <a href="#" target="_blank"><span class="mai-logo-instagram"></span></a>
-                        <a href="#" target="_blank"><span class="mai-logo-linkedin"></span></a>
-                    </div>
-                </div>
-            </div>
-
-            <hr>
-
-            <p id="copyright">Copyright &copy; 2022 <a href="" target="_blank">Jahid Hasan</a>. All
-                right reserved</p>
+    <footer class="page-footer text-center">
+        <p id="copyright">Copyright &copy; 2022 <a href="" target="_blank">Jahid Hasan</a>. All
+            right reserved</p>
         </div>
     </footer>
 

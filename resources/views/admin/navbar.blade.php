@@ -10,7 +10,7 @@
         </button>
         <ul class="navbar-nav w-100">
           <li class="nav-item ml-3">
-           <a href="">Visit</a>
+           <a href="{{ url('home') }}">Home</a>
           </li>
         </ul>
         <ul class="navbar-nav navbar-nav-right">
